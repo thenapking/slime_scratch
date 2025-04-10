@@ -17,10 +17,24 @@ const renderFSource = `#version 300 es
 precision highp float;
 in vec2 v_texCoord;
 uniform sampler2D u_texture;
+uniform vec3 u_palette[256];
+
 out vec4 fragColor;
 void main() {
-  fragColor = texture(u_texture, v_texCoord);
+  // Sample the monochrome texture. Assuming the texture is grayscale, use the red channel.
+  vec4 mono = texture(u_texture, v_texCoord);
+  float intensity = mono.r;
+  
+  // Map the intensity (0.0 - 1.0) to an index (0-255).
+  // Using clamp to ensure it stays within bounds.
+  int index = int(clamp(intensity, 0.0, 1.0) * 255.0);
+  
+  // Look up the color from the palette.
+  vec3 color = u_palette[index];
+  
+  fragColor = vec4(color, mono.a);
 }`;
+
 
 function createRenderProgram() {
 
@@ -45,6 +59,10 @@ function createRenderProgram() {
 
   gl.enableVertexAttribArray(1); // a_texCoord
   gl.vertexAttribPointer(1, 2, gl.FLOAT, false, 4 * 4, 2 * 4);
+
+  // Get the uniform location for the palette and set it.
+  const paletteLocation = gl.getUniformLocation(renderProgram, "u_palette");
+  gl.uniform3fv(paletteLocation, mapped_colours);
 
   gl.bindVertexArray(null);
   gl.bindBuffer(gl.ARRAY_BUFFER, null);

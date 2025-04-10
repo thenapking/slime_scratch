@@ -9,6 +9,8 @@ let particle_data;
 
 setup_webgl()
 createGUI();
+calculate_colours();
+
 
 createParticleProgram();
 createDotProgram();
