@@ -86,7 +86,7 @@ function applyBlur() {
   
   gl.uniform1i(gl.getUniformLocation(blurProgram, "uTexture"), 1); 
   gl.uniform2f(gl.getUniformLocation(blurProgram, "uTextureSize"), c.width, c.height);
-  gl.uniform1f(gl.getUniformLocation(blurProgram, "uDecay"), decayFactor);
+  gl.uniform1f(gl.getUniformLocation(blurProgram, "uDecay"), currentPreset.trailDecayFactor);
 
   gl.viewport(0, 0, c.width, c.height);
 

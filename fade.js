@@ -59,7 +59,7 @@ function applyFade() {
   gl.enable(gl.BLEND);
   
   let clearOpacityLoc = gl.getUniformLocation(fadeProgram, "clearOpacity");
-  gl.uniform1f(clearOpacityLoc, clearStrength);
+  gl.uniform1f(clearOpacityLoc, currentPreset.clearOpacity);
   
   // Bind the framebuffer and attach texture as the render target.
   gl.bindTexture(gl.TEXTURE_2D, texture);

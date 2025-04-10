@@ -160,11 +160,6 @@ function calcParticles(){
 
   // this essentially swaps the buffer indexes   
   current_buffer++
-
-
-//  log_buffer(buffers[writeBufferIdx], writeBufferIdx);
-//  log_buffer(buffers[readBufferIdx], readBufferIdx);
-
 }
 
   // THIS OUTPUTS IT TO THE CONSOLE NICELY
@@ -178,54 +173,6 @@ function log_buffer(buffer, buffer_name){
 }
 
 
-let currentPreset = {
-  sensorDistanceBase: 0,
-  sensorDistanceExponent: 4,
-  sensorDistanceMultiplier: 0.3,
-  sensorAngleBase: 0.1,
-  sensorAngleExponent: 51.32,
-  sensorAngleMultiplier: 20,
-  turnAngleBase: 0.41,
-  turnAngleExponent: 4,
-  turnAngleMultiplier: 0,
-  speedBase: 0.1,
-  speedExponent: 6,
-  speedpMultiplier: 0.1,
-  verticalOffset: 0,
-  horizontalOffset: 0,
-  depositOpacity: 0.5,
-  trailDecayFactor: 0.95,
-  blurIterationCount: 1,
-  renderOpacity: 0.5,
-  clearOpacity: 0.1,
-  particleDotSize: 2,
-};
-
-let presetArray = [];
-
-function updatePresetArray() { 
-  presetArray = [
-    currentPreset.sensorDistanceBase,
-    currentPreset.sensorDistanceExponent,
-    currentPreset.sensorDistanceMultiplier,
-    currentPreset.sensorAngleBase,
-    currentPreset.sensorAngleExponent,
-    currentPreset.sensorAngleMultiplier,
-    currentPreset.turnAngleBase,
-    currentPreset.turnAngleExponent,
-    currentPreset.turnAngleMultiplier,
-    currentPreset.speedBase,
-    currentPreset.speedExponent,
-    currentPreset.speedpMultiplier,
-    currentPreset.verticalOffset,
-    currentPreset.horizontalOffset,
-    currentPreset.depositOpacity,
-    currentPreset.trailDecayFactor,
-    currentPreset.blurIterationCount,
-    currentPreset.renderOpacity,
-    currentPreset.clearOpacity,
-  ];
-}
 
 
 
