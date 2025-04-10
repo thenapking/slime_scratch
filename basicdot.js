@@ -38,12 +38,12 @@ function createDotProgram() {
   gl.bindVertexArray(basicVAOs[0]);
   gl.bindBuffer(gl.ARRAY_BUFFER, buffers[0]);
   const positionLoc = gl.getAttribLocation(basicDot, "position");
-  gl.vertexAttribPointer(positionLoc, 2, gl.FLOAT, false, 2 * 4, 0);
+  gl.vertexAttribPointer(positionLoc, 2, gl.FLOAT, false, 3 * 4, 0);
   gl.enableVertexAttribArray(positionLoc);
 
   gl.bindBuffer(gl.ARRAY_BUFFER, buffers[1]);
   gl.bindVertexArray(basicVAOs[1]);
-  gl.vertexAttribPointer(positionLoc, 2, gl.FLOAT, false, 2 * 4, 0);
+  gl.vertexAttribPointer(positionLoc, 2, gl.FLOAT, false, 3 * 4, 0);
   gl.enableVertexAttribArray(positionLoc);
 
   gl.bindVertexArray(null)

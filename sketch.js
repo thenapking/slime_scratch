@@ -1,6 +1,6 @@
 let simSize = 512;
 let renderSize = 2048;
-let n = 10
+let n = 500
 let dotSize = 2.0
 let decayFactor = 0.99
 let clearStrength = 0.05
