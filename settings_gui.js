@@ -62,10 +62,10 @@ const presetSettings= {
   verticalOffset: {min: 0, max: 10, step: 0.01},
   horizontalOffset: {min: 0, max: 10, step: 0.01},
   depositOpacity: {min: 0, max: 1, step: 0.01},
-  trailDecayFactor: {min: 0, max: 1, step: 0.01},
+  trailDecayFactor: {min: 0.7, max: 1, step: 0.005},
   blurIterationCount: {min: 0, max: 10, step: 1},
   renderOpacity: {min: 0, max: 1, step: 0.01},
-  clearOpacity: {min: 0, max: 1, step: 0.01},
+  clearOpacity: {min: 0, max: 0.1, step: 0.005},
   particleDotSize: {min: 0, max: 10, step: 0.01}
   
 

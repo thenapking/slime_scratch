@@ -87,7 +87,7 @@ function drawDotOffscreen(){
 
   gl.viewport(0, 0, c.width, c.height);
 
-  // Draw the particles
+  gl.enable(gl.BLEND);
   gl.drawArrays(gl.POINTS, 0, n * n);
 
   gl.bindBuffer(gl.ARRAY_BUFFER, null);

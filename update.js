@@ -91,7 +91,7 @@ function createParticleProgram(){
   updateParticles = create_program(updateVSource, updateFSource, varyings)
 
   let other_data = new Float32Array(3 * n * n);
-  for (let j = 0; j < n * n; j+=2) {
+  for (let j = 0; j < n * n; j+=3) {
     other_data[j] = 2 * Math.random() - 1; // x position
     other_data[j + 1] = 2 * Math.random() - 1; // y position
     other_data[j + 2] = 2 * Math.random() - 1; // angle
@@ -135,6 +135,8 @@ function calcParticles(){
 
   gl.bindBufferBase(gl.TRANSFORM_FEEDBACK_BUFFER, 0, buffers[writeBufferIdx]); 
   
+  // could this bit be wrong?
+  // could we first need to render off screen to a texture that is 512*512?
   gl.activeTexture(gl.TEXTURE1);
   gl.bindTexture(gl.TEXTURE_2D, texture);
   
